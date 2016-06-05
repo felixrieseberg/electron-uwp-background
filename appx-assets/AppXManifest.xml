@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
+  <Identity Name="ElectronBackground" ProcessorArchitecture="x64" Publisher="CN=Test" Version="0.0.0.1" />
+  <Properties>
+    <DisplayName>Electron UWP Background</DisplayName>
+    <PublisherDisplayName>CN=Test</PublisherDisplayName>
+    <Logo>assets\SampleAppx.50x50.png</Logo>
+  </Properties>
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14332.0" MaxVersionTested="10.0.14332.0" />
+  </Dependencies>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+	<Capability Name="internetClient" />
+  </Capabilities>
+  <Applications>
+    <Application Id="ElectronBackground" Executable="app/ElectronBackground.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="Electron UWP Background" Description="Electron UWP Background" BackgroundColor="#777777" Square150x150Logo="assets\SampleAppx.150x150.png" Square44x44Logo="assets\SampleAppx.44x44.png" />
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTask.BackgroundTask">
+          <BackgroundTasks>
+			      <Task Type="systemEvent" />
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Extensions>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>CLRHost.dll</Path>
+        <ActivatableClass ActivatableClassId="BackgroundTask.BackgroundTask" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+  </Extensions>
+</Package>

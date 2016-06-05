@@ -1,0 +1,20 @@
+{
+  "name": "electron-uwp-background",
+  "version": "1.0.0",
+  "description": "A sample explaining how to use UWP background tasks with Electron apps",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron electron-app",
+    "build": "gulp build-electron"
+  },
+  "author": "Felix Rieseberg <felix@felixrieseberg.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "electron-packager": "^7.0.3",
+    "electron-prebuilt": "^1.2.1",
+    "electron-windows-store": "^0.4.1",
+    "gulp": "^3.9.1"
+  }
+}
