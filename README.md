@@ -14,7 +14,7 @@ The background task needs to be registered at runtime, usually during the first 
  * To build from source, Windows 10 SDK (build 14332.1000 - download it from the [developer section on Windows Insider](https://insider.windows.com/))
 
 ## Running the Example
- * Download the example and unzip it.
+ * [Download the example (which has binaries included)](https://github.com/felixrieseberg/electron-uwp-background/releases/tag/v1.0.0) and unzip it.
  * Open up PowerShell as an administrator and execute `Add-AppxPackage –register ./electron-uwp-background/AppxManifest.xml`
  * In your start menu, search for "Electron Background". Make a right click and pin it to your start menu. Run the app.
  * In your settings, change your time zone. A notification should pop up, and the tile of your app should update.
